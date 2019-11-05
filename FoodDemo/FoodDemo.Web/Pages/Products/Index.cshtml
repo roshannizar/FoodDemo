@@ -4,52 +4,88 @@
     ViewData["Title"] = "Products";
 }
 
-<h1>Products List</h1>
+    <div class="container-fluid">
+        <h2>Products</h2>
 
-@{
+        <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#exampleModalCenter">New Product</button>
+        <br/><br/>
+        @{
+            <div class="container-fluid">
+                <div class="row">
 
-    if (@Model.Products != null)
-    {
-        @foreach (var product in Model.Products)
-        {
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">@product.Name</h5>
-                    <p class="card-text">@product.Description</p>
-                    <a href="#" class="btn btn-primary">@product.UnitPrice</a>
+                    @if (@Model.Products != null)
+                    {
+
+                        @foreach (var product in Model.Products)
+                        {
+                            <div class="card margin border-color-strip" style="width: 18rem;">
+                                <div class="card-body">
+                                    <label class="card-title font-weight-bold">@product.Name</label>
+                                    <span class="badge badge-secondary right">Quantity: @product.Quantity</span>
+                                    <hr />
+                                    <label class="small">Description:</label>
+                                    <p class="card-text">@product.Description</p>
+                                    <hr />
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <button type="button" class="btn btn-warning btn-sm">Edit</button>
+                                        <button type="button" class="btn btn-danger btn-sm">Remove</button>
+                                    </div>
+                                </div>
+                           </div>
+                        }
+
+                     }
+                     else
+                     {
+                        <h3>Sorry no products available!</h3>
+                     }
+
                 </div>
             </div>
+
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Add New Product</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="container-fluid">
+                            <form method="post">
+                                <div class="form-group">
+                                    <label for="Name">Product Name: </label>
+                                    <input type="text" class="form-control" name="Name" id="Name" placeholder="eg: Orange">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description:</label>
+                                    <textarea class="form-control" name="Description" id="description" rows="3"></textarea>
+                                </div>
+                                <div class="form-row">
+                                    <div class="input-group col-md-6">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">$</span>
+                                        </div>
+                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">.00</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="Quantity">Quantity:</label>
+                                        <input type="number" class="form-control" name="Quantity" id="Quantity">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         }
-
-    }
-    else
-    {
-        <h3>Sorry no products available!</h3>
-    }
-
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-        Launch demo modal
-    </button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
     </div>
-
-}

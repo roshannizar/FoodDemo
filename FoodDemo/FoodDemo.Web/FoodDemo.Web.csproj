@@ -21,8 +21,4 @@
     <ProjectReference Include="..\FoodDemo.Core\FoodDemo.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\js\" />
-  </ItemGroup>
-
 </Project>
