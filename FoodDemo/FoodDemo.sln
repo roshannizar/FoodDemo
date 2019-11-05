@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodDemo.Core", "FoodDemo.C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A2475EB2-F008-49B8-AA73-AAFBE9CD1E6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodDemo.Data", "FoodDemo.Data\FoodDemo.Data.csproj", "{9A1933F3-D7B7-4432-8796-3C8ACF84ABD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodDemo.Data", "FoodDemo.Data\FoodDemo.Data.csproj", "{9A1933F3-D7B7-4432-8796-3C8ACF84ABD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodDemo.Web", "FoodDemo.Web\FoodDemo.Web.csproj", "{981E9994-0C7D-4FEA-BFEC-01333DC64E39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodDemo.Web", "FoodDemo.Web\FoodDemo.Web.csproj", "{981E9994-0C7D-4FEA-BFEC-01333DC64E39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodDemo.Tests", "FoodDemo.Tests\FoodDemo.Tests.csproj", "{802C794B-7B17-4E4B-8A2E-76EE60A76AB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,9 +31,16 @@ Global
 		{981E9994-0C7D-4FEA-BFEC-01333DC64E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{981E9994-0C7D-4FEA-BFEC-01333DC64E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{981E9994-0C7D-4FEA-BFEC-01333DC64E39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{802C794B-7B17-4E4B-8A2E-76EE60A76AB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{802C794B-7B17-4E4B-8A2E-76EE60A76AB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{802C794B-7B17-4E4B-8A2E-76EE60A76AB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{802C794B-7B17-4E4B-8A2E-76EE60A76AB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{802C794B-7B17-4E4B-8A2E-76EE60A76AB9} = {A2475EB2-F008-49B8-AA73-AAFBE9CD1E6C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {70377712-B98F-4FA8-A583-0594612AC1DA}

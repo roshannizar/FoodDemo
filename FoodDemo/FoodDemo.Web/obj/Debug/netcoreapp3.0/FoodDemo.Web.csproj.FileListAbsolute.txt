@@ -10,7 +10,6 @@ C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\bin\Debug\netcor
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.csprojAssemblyReference.cache
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\staticwebassets\FoodDemo.Web.StaticWebAssets.Manifest.cache
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\staticwebassets\FoodDemo.Web.StaticWebAssets.xml
-C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.AssemblyInfoInputs.cache
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.AssemblyInfo.cs
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.RazorTargetAssemblyInfo.cache
@@ -38,3 +37,18 @@ C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\bin\Debug\netcor
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\bin\Debug\netcoreapp3.0\FoodDemo.Core.pdb
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\bin\Debug\netcoreapp3.0\FoodDemo.Data.pdb
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.csproj.CopyComplete
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\bin\Debug\netcoreapp3.0\libman.json
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\bin\Debug\netcoreapp3.0\FoodDemo.Web.Views.dll
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\bin\Debug\netcoreapp3.0\FoodDemo.Web.Views.pdb
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.RazorAssemblyInfo.cache
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.RazorAssemblyInfo.cs
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.TagHelpers.input.cache
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.TagHelpers.output.cache
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.RazorCoreGenerate.cache
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_Layout.cshtml.g.cs
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\_ViewImports.cshtml.g.cs
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\_ViewStart.cshtml.g.cs
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.RazorTargetAssemblyInfo.cs
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.Views.pdb

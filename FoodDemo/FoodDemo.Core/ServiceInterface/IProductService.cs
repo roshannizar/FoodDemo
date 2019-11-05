@@ -9,5 +9,6 @@ namespace FoodDemo.Core.ServiceInterface
     {
         IEnumerable<Product> GetAll();
         void AddProduct(Product product);
+        int Commit();
     }
 }
