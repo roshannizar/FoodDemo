@@ -1,0 +1,8 @@
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\bin\Debug\netcoreapp2.2\FoodDemo.Data.deps.json
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\bin\Debug\netcoreapp2.2\FoodDemo.Data.dll
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\bin\Debug\netcoreapp2.2\FoodDemo.Data.pdb
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\obj\Debug\netcoreapp2.2\FoodDemo.Data.csprojAssemblyReference.cache
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\obj\Debug\netcoreapp2.2\FoodDemo.Data.AssemblyInfoInputs.cache
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\obj\Debug\netcoreapp2.2\FoodDemo.Data.AssemblyInfo.cs
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\obj\Debug\netcoreapp2.2\FoodDemo.Data.dll
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\obj\Debug\netcoreapp2.2\FoodDemo.Data.pdb

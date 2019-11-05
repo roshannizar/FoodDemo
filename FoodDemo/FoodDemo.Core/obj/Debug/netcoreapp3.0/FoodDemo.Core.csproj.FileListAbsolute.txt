@@ -1,0 +1,11 @@
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Core\bin\Debug\netcoreapp3.0\FoodDemo.Core.deps.json
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Core\bin\Debug\netcoreapp3.0\FoodDemo.Core.dll
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Core\bin\Debug\netcoreapp3.0\FoodDemo.Core.pdb
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Core\bin\Debug\netcoreapp3.0\FoodDemo.Data.dll
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Core\bin\Debug\netcoreapp3.0\FoodDemo.Data.pdb
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Core\obj\Debug\netcoreapp3.0\FoodDemo.Core.csprojAssemblyReference.cache
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Core\obj\Debug\netcoreapp3.0\FoodDemo.Core.AssemblyInfoInputs.cache
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Core\obj\Debug\netcoreapp3.0\FoodDemo.Core.AssemblyInfo.cs
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Core\obj\Debug\netcoreapp3.0\FoodDemo.Core.csproj.CopyComplete
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Core\obj\Debug\netcoreapp3.0\FoodDemo.Core.dll
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Core\obj\Debug\netcoreapp3.0\FoodDemo.Core.pdb
