@@ -1,4 +1,6 @@
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\bin\Debug\netcoreapp3.0\FoodDemo.Data.deps.json
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\bin\Debug\netcoreapp3.0\FoodDemo.Data.runtimeconfig.json
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\bin\Debug\netcoreapp3.0\FoodDemo.Data.runtimeconfig.dev.json
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\bin\Debug\netcoreapp3.0\FoodDemo.Data.dll
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\bin\Debug\netcoreapp3.0\FoodDemo.Data.pdb
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\obj\Debug\netcoreapp3.0\FoodDemo.Data.csprojAssemblyReference.cache
@@ -6,5 +8,3 @@ C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\obj\Debug\netco
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\obj\Debug\netcoreapp3.0\FoodDemo.Data.AssemblyInfo.cs
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\obj\Debug\netcoreapp3.0\FoodDemo.Data.dll
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\obj\Debug\netcoreapp3.0\FoodDemo.Data.pdb
-C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\bin\Debug\netcoreapp3.0\FoodDemo.Data.runtimeconfig.json
-C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Data\bin\Debug\netcoreapp3.0\FoodDemo.Data.runtimeconfig.dev.json

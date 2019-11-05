@@ -52,10 +52,6 @@ namespace FoodDemo.Web
             {
                 endpoints.MapControllers();
                 endpoints.MapRazorPages();
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
             });
         }
     }
