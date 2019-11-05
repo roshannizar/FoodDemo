@@ -1,0 +1,30 @@
+﻿@page
+@model FoodDemo.Web.Pages.Products.IndexModel
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h1>Products List</h1>
+
+@{ 
+
+    if (@Model.Products != null)
+    {
+        @foreach (var product in Model.Products)
+        {
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text">@product.Description</p>
+                    <a href="#" class="btn btn-primary">@product.UnitPrice</a>
+                </div>
+            </div>
+        }
+
+    }
+    else
+    {
+        <h3>Sorry no products available!</h3>
+    }
+
+}

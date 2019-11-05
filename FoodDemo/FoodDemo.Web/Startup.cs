@@ -33,6 +33,8 @@ namespace FoodDemo.Web
                 options.UseSqlServer(configuration.GetConnectionString("FoodDemoDb"));
             });
 
+            services.AddScoped<IProductService, ProductService>();
+
             services.AddControllers();
             services.AddRazorPages();
         }
