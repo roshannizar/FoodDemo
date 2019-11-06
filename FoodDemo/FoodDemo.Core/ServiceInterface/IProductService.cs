@@ -9,6 +9,7 @@ namespace FoodDemo.Core.ServiceInterface
     {
         IEnumerable<Product> GetProducts();
         Product GetProduct(int id);
+        IEnumerable<Product> GetProductByName(string name);
         void Create(Product product);
         int Commit();
     }

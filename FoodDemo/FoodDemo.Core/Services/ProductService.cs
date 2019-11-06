@@ -42,5 +42,15 @@ namespace FoodDemo.Core.Services
 
             return query;
         }
+
+        public IEnumerable<Product> GetProductByName(string name)
+        {
+            var query = from r in db.Products
+                        where r.Name.StartsWith(name) || string.IsNullOrEmpty(name)
+                        orderby r.Name
+                        select r;
+
+            return query;
+        }
     }
 }

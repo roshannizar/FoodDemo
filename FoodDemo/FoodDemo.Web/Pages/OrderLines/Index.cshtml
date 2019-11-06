@@ -6,5 +6,37 @@
 
 <div class="container-fluid">
     <h3 class="font-weight-bold">Order Line</h3>
+
+    <form method="post">
+        <table>
+            <input type="text" class="form-control" name="Name" id="Name" />
+            <tr>
+                <select asp-items="Model.customerList">
+                    <option>-- Choose a customer --</option>
+                </select>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+    </form>
 </div>
+
+@section scripts {
+    <script>
+        $("#Name").keyup({
+            source: function (request, response) {
+                $.ajax({
+                    url: "/OrderLines/GetProductAutoComplete",
+                    dataType: "json",
+                    data: {
+                        q: request.term
+                    },
+                    success: function (data) {
+                        response(data);
+                    }
+                });
+            }
+        });
+    </script>
+}
 

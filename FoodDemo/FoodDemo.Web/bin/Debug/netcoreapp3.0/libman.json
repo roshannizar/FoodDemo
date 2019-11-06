@@ -9,6 +9,10 @@
     {
       "library": "jquery@3.4.1",
       "destination": "wwwroot/jquery/"
+    },
+    {
+      "library": "jquery-autocomplete@1.0.7",
+      "destination": "wwwroot/jquery-autocomplete/"
     }
   ]
 }

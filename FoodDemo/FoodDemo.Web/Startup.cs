@@ -35,6 +35,7 @@ namespace FoodDemo.Web
 
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<IOrderLineService, OrderLineService>();
 
             services.AddControllers();
             services.AddRazorPages();
