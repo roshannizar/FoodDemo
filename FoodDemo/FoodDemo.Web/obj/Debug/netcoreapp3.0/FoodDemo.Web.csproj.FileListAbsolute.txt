@@ -128,3 +128,5 @@ C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\bin\Debug\netcor
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\Products\Index.cshtml.g.cs
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\Customers\Index.cshtml.g.cs
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\Customers\PartialView\_List.cshtml.g.cs
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\Products\PartialView\_CreateProduct.cshtml.g.cs

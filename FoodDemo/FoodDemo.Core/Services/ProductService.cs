@@ -27,7 +27,7 @@ namespace FoodDemo.Core.Services
             return db.SaveChanges();
         }
 
-        public IEnumerable<Product> GetAll()
+        public IEnumerable<Product> GetProducts()
         {
             var query = from r in db.Products
                    orderby r.Name

@@ -18,22 +18,7 @@
 
                     @foreach (var customer in Model.Customers)
                     {
-                        <div class="card margin border-color-strip" style="width: 18rem;">
-                            <div class="card-body">
-                                <label class="card-title font-weight-bold">@customer.FirstName @customer.LastName</label>
-                                <hr />
-                                <label class="small">Mobile No:</label>
-                                <p class="card-text">@customer.MobileNo</p>
-                                <label class="small">Email: </label>
-                                <span class="badge badge-secondary">@customer.Email</span>
-                                <hr />
-                                <div class="btn-group" role="group" aria-label="Basic example">
-                                    <button type="button" class="btn btn-outline-info btn-sm">More</button>
-                                    <button type="button" class="btn btn-warning btn-sm">Edit</button>
-                                    <button type="button" class="btn btn-danger btn-sm">Remove</button>
-                                </div>
-                            </div>
-                        </div>
+                        <partial name="PartialView/_List" model="customer" />
                     }
 
                 }

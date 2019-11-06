@@ -26,7 +26,7 @@ namespace FoodDemo.Web.Pages.Products
         }
         public void OnGet()
         {
-            Products = productService.GetAll();
+            Products = productService.GetProducts();
         }
 
         public IActionResult OnPost()
