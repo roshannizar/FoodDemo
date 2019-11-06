@@ -1,3 +1,19 @@
 ﻿@using FoodDemo.Data.Entity
 
-@model Products
+@model Product
+
+    <div class="card margin border-color-strip" style="width: 18rem;">
+        <div class="card-body">
+            <label class="card-title font-weight-bold">@Model.Name</label>
+            <span class="badge badge-secondary right">Quantity: @Model.Quantity</span>
+            <hr />
+            <label class="small">Description:</label>
+            <p class="card-text">@Model.Description</p>
+            <hr />
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-outline-info btn-sm">More</button>
+                <button type="button" class="btn btn-warning btn-sm">Edit</button>
+                <button type="button" class="btn btn-danger btn-sm">Remove</button>
+            </div>
+        </div>
+    </div>

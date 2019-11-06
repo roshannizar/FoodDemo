@@ -3,6 +3,6 @@
     public enum StatusType
     {
         Pending,
-        Completed
+        Confirmed
     }
 }

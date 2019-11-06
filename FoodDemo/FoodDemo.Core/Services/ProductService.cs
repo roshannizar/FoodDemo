@@ -35,5 +35,12 @@ namespace FoodDemo.Core.Services
 
             return query;
         }
+
+        public Product GetProduct(int id)
+        {
+            var query = db.Products.Find(id);
+
+            return query;
+        }
     }
 }

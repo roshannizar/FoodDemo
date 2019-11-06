@@ -27,6 +27,13 @@ namespace FoodDemo.Core.Services
             db.Add(order);
         }
 
+        public Order GetOrder(int id)
+        {
+            var query = db.Orders.Find(id);
+
+            return query;
+        }
+
         public IEnumerable<Order> GetOrders()
         {
             var query = from o in db.Orders

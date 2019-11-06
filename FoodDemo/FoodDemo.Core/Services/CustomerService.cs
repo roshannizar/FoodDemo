@@ -26,6 +26,13 @@ namespace FoodDemo.Core.Services
             db.Add(customer);
         }
 
+        public Customer GetCustomer(int id)
+        {
+            var query = db.Customers.Find(id);
+
+            return query;
+        }
+
         public IEnumerable<Customer> GetCustomers()
         {
             var query = from c in db.Customers
