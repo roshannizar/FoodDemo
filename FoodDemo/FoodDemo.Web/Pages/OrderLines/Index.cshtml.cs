@@ -20,8 +20,9 @@ namespace FoodDemo.Web.Pages.OrderLines
         public IEnumerable<OrderLine> orderLines { get; set; }
         public IEnumerable<Product> products { get; set; }
         public SelectList customerList { get; set; }
-
+        [BindProperty]
         public OrderLine orderLine { get; set; }
+        public int Id { get; set; }
         
         public IndexModel(IConfiguration configuration,IOrderLineService orderLineService,IProductService productService,ICustomerService customerService)
         {
@@ -46,6 +47,16 @@ namespace FoodDemo.Web.Pages.OrderLines
             var query = productService.GetProductByName(name).ToList();
 
             return new JsonResult(query);
+        }
+
+        public IActionResult OnPost()
+        {
+            if(ModelState.IsValid)
+            {
+                orderLineService.Create(orderLine);
+                orderLineService.Commit();
+            }
+            return RedirectToPage("Index");
         }
 
     }

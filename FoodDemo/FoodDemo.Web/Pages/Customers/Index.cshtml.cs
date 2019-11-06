@@ -15,6 +15,7 @@ namespace FoodDemo.Web.Pages.Customers
         private readonly IConfiguration configuration;
         private readonly ICustomerService customerService;
         public IEnumerable<Customer> Customers { get; set; }
+        [BindProperty]
         public Customer customer { get; set; }
 
         public IndexModel(IConfiguration Configuration,ICustomerService customerService)

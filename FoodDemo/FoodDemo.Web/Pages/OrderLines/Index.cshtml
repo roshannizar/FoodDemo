@@ -5,38 +5,84 @@
 }
 
 <div class="container-fluid">
-    <h3 class="font-weight-bold">Order Line</h3>
-
+    <h2>Order Line</h2>
+    <hr />
     <form method="post">
-        <table>
-            <input type="text" class="form-control" name="Name" id="Name" />
+        <label class="font-weight-bold">Customer: </label>
+        <select class="badge badge-dark" asp-for="Id" asp-items="Model.customerList">
+            <option>-- Choose a customer --</option>
+        </select>
+        <hr />
+        <table class="table">
             <tr>
-                <select asp-items="Model.customerList">
-                    <option>-- Choose a customer --</option>
-                </select>
+                <th>Product</th>
+                <th colspan="2">Description</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Total Amount</th>
+                <th>Controls</th>
             </tr>
             <tr>
+                <td>
+                    <input type="text" class="form-control col-md-8" placeholder="eg: Orange" name="ProductId" id="ProductId" />
+                </td>
+                <td colspan="2">
+                    <p name="Description">description</p>
+                    <input type="text" hidden value="description" />
+                </td>
+                <td>
+                    <p name="UnitPrice">Rs: 12.00</p>
+                    <input type="text" hidden name="UnitPrice" value="12.00" />
+                </td>
+                <td>
+                    <input type="number" class="form-control col-md-4" placeholder="eg: 10" name="Quantity" id="Quantity" />
+                </td>
+                <td>
+                    <label>Rs: 120.00</label>
+                    <input type="hidden" name="Status" value="0" />
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-outline-primary btn-sm">Add Item</button>
+                </td>
             </tr>
+            @foreach (var orderLineList in Model.orderLines)
+            {
+                <tr>
+                    <td>@orderLineList.Products.Name</td>
+                    <td colspan="2">@orderLineList.Products.Description</td>
+                    <td>Rs: @orderLineList.UnitPrice</td>
+                    <td>@orderLineList.Quantity</td>
+                    <td>
+                        Rs: @(orderLineList.Quantity * orderLineList.UnitPrice)
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-outline-warning btn-sm">Edit</button>
+                        <button type="button" class="btn btn-outline-danger btn-sm">Remove</button>
+                    </td>
+                </tr>
+            }
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                <label>Grand Total:</label>
+            </td>
+            <td><label>Rs: 120.00</label></td>
+            <td><label class="btn btn-info btn-sm">Confirm Order</label></td>
+        </tr>
         </table>
     </form>
 </div>
 
 @section scripts {
     <script>
-        $("#Name").keyup({
-            source: function (request, response) {
-                $.ajax({
-                    url: "/OrderLines/GetProductAutoComplete",
-                    dataType: "json",
-                    data: {
-                        q: request.term
-                    },
-                    success: function (data) {
-                        response(data);
-                    }
-                });
-            }
-        });
+        $(document).ready(function () {
+            $('#Name').keyup({
+        source:'OrderLines/Index'
+    });
+});
     </script>
 }
 

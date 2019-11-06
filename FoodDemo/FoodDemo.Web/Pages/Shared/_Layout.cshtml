@@ -30,7 +30,7 @@
                         <a class="nav-link" asp-page="/Customers/Index">Customer</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Order</a>
+                        <a class="nav-link" asp-page="/Orders/Index">Order</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
@@ -53,7 +53,7 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
+        <div class="container-fluid">
             @RenderSection("footer", required: false)
             &copy; 2019 - Food Demo
         </div>

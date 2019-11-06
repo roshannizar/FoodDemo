@@ -4,7 +4,7 @@ using FoodDemo.Data.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using Microsoft.EntityFrameworkCore;
 namespace FoodDemo.Core.Services
 {
     public class OrderLineService : IOrderLineService
@@ -34,9 +34,11 @@ namespace FoodDemo.Core.Services
 
         public IEnumerable<OrderLine> GetOrderLines()
         {
-            var query = from ol in db.OrderLines
-                   orderby ol.Status
-                   select ol;
+            //var query = (from o in db.OrderLines
+            //             join p in db.Products on o.ProductId equals p.Id
+            //             select (o));
+
+            var query = db.OrderLines.Include(p => p.Products).ToList();
 
             return query;
         }
