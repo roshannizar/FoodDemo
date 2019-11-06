@@ -18,9 +18,10 @@ namespace FoodDemo.Data.Entity
         public string Description { get; set; }
 
         [Required]
-        public string UnitPrice { get; set; }
+        [DataType(DataType.Currency)]
+        public double UnitPrice { get; set; }
 
         [Required]
-        public string Quantity { get; set; }
+        public int Quantity { get; set; }
     }
 }

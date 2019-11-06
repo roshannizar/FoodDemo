@@ -8,7 +8,7 @@ namespace FoodDemo.Core.ServiceInterface
     public interface IProductService
     {
         IEnumerable<Product> GetAll();
-        void AddProduct(Product product);
+        void Create(Product product);
         int Commit();
     }
 }

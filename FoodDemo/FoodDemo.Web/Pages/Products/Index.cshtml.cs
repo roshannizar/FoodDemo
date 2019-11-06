@@ -33,7 +33,7 @@ namespace FoodDemo.Web.Pages.Products
         {
             if(ModelState.IsValid)
             {
-                productService.AddProduct(product);
+                productService.Create(product);
                 productService.Commit();
             }
             return RedirectToPage("Index");

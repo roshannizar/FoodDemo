@@ -17,7 +17,7 @@ namespace FoodDemo.Core.Services
             this.db = db;
         }
 
-        public void AddProduct(Product product)
+        public void Create(Product product)
         {
             db.Add(product);
         }

@@ -27,6 +27,7 @@
                                     <p class="card-text">@product.Description</p>
                                     <hr />
                                     <div class="btn-group" role="group" aria-label="Basic example">
+                                        <button type="button" class="btn btn-outline-info btn-sm">More</button>
                                         <button type="button" class="btn btn-warning btn-sm">Edit</button>
                                         <button type="button" class="btn btn-danger btn-sm">Remove</button>
                                     </div>
@@ -37,7 +38,9 @@
                      }
                      else
                      {
-                        <h3>Sorry no products available!</h3>
+                        <div class="alert alert-danger" role="alert">
+                            <h4 class="alert-heading">Product is empty!</h4>
+                        </div>
                      }
 
                 </div>
@@ -66,11 +69,11 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
                                         <label class="small font-weight-bold" for="UnitPrice">Unit Price:</label>
-                                        <input type="number" class="form-control" placeholder="12.00" name="UnitPrice" id="UnitPrice">
+                                        <input type="number" class="form-control" placeholder="eg: 12.00" name="UnitPrice" id="UnitPrice">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label class="small font-weight-bold" for="Quantity">Quantity:</label>
-                                        <input type="number" class="form-control" placeholder="10" name="Quantity" id="Quantity">
+                                        <input type="number" class="form-control" placeholder="eg: 10" name="Quantity" id="Quantity">
                                     </div>
                                 </div>
                                 <div class="modal-footer">

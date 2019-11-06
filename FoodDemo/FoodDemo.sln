@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodDemo.Data", "FoodDemo.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodDemo.Web", "FoodDemo.Web\FoodDemo.Web.csproj", "{981E9994-0C7D-4FEA-BFEC-01333DC64E39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodDemo.Tests", "FoodDemo.Tests\FoodDemo.Tests.csproj", "{802C794B-7B17-4E4B-8A2E-76EE60A76AB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodDemo.Tests", "FoodDemo.Tests\FoodDemo.Tests.csproj", "{802C794B-7B17-4E4B-8A2E-76EE60A76AB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
