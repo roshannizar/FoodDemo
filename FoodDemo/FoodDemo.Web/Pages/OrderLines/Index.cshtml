@@ -4,77 +4,90 @@
     ViewData["Title"] = "Index";
 }
 
-<div class="container-fluid">
-    <h2>Order Line</h2>
-    <hr />
-    <form method="post">
+    <div class="container-fluid">
+        <h2>Order Line</h2>
+        <hr />
         <label class="font-weight-bold">Customer: </label>
         <select class="badge badge-dark" asp-for="Id" asp-items="Model.customerList">
             <option>-- Choose a customer --</option>
         </select>
-        <hr />
-        <table class="table">
-            <tr>
-                <th>Product</th>
-                <th colspan="2">Description</th>
-                <th>Unit Price</th>
-                <th>Quantity</th>
-                <th>Total Amount</th>
-                <th>Controls</th>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" class="form-control col-md-8" placeholder="eg: Orange" name="ProductId" id="ProductId" />
-                </td>
-                <td colspan="2">
-                    <p name="Description">description</p>
-                    <input type="text" hidden value="description" />
-                </td>
-                <td>
-                    <p name="UnitPrice">Rs: 12.00</p>
-                    <input type="text" hidden name="UnitPrice" value="12.00" />
-                </td>
-                <td>
-                    <input type="number" class="form-control col-md-4" placeholder="eg: 10" name="Quantity" id="Quantity" />
-                </td>
-                <td>
-                    <label>Rs: 120.00</label>
-                    <input type="hidden" name="Status" value="0" />
-                </td>
-                <td>
-                    <button type="submit" class="btn btn-outline-primary btn-sm">Add Item</button>
-                </td>
-            </tr>
-            @foreach (var orderLineList in Model.orderLines)
-            {
+        @Model.Message
+        <form>
+            <hr />
+            <table class="table" id="tableForm">
                 <tr>
-                    <td>@orderLineList.Products.Name</td>
-                    <td colspan="2">@orderLineList.Products.Description</td>
-                    <td>Rs: @orderLineList.UnitPrice</td>
-                    <td>@orderLineList.Quantity</td>
+                    <th>Product</th>
+                    <th colspan="2">Description</th>
+                    <th>Unit Price</th>
+                    <th>Quantity</th>
+                    <th>Total Amount</th>
+                    <th>Controls</th>
+                </tr>
+                <tr>
                     <td>
-                        Rs: @(orderLineList.Quantity * orderLineList.UnitPrice)
+                        <input type="text" class="form-control col-md-8" placeholder="eg: Orange" name="ProductId" id="productname" />
+                    </td>
+                    <td colspan="2">
+                        <p name="Description">description</p>
+                        <input type="text" hidden value="Description" id="description"/>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-outline-warning btn-sm">Edit</button>
-                        <button type="button" class="btn btn-outline-danger btn-sm">Remove</button>
+                        <p name="UnitPrice">Rs: 12.00</p>
+                        <input type="text" hidden name="UnitPrice" value="12.00" id="unitprice"/>
+                    </td>
+                    <td>
+                        <input type="number" class="form-control col-md-4" placeholder="eg: 10" name="Quantity" id="quantity" />
+                    </td>
+                    <td>
+                        <p id="totalamount">Rs: 120.00</p>
+                        <input type="hidden" name="Status" id="status" value="0" />
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="AddOrderLine()">Add Item</button>
                     </td>
                 </tr>
-            }
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-                <label>Grand Total:</label>
-            </td>
-            <td><label>Rs: 120.00</label></td>
-            <td><label class="btn btn-info btn-sm">Confirm Order</label></td>
-        </tr>
-        </table>
-    </form>
-</div>
+
+                @*@{
+                    if (@Model.orderLines != null)
+                    {
+                        @foreach (var orderLineList in Model.orderLines)
+                        {
+                            <tr>
+                                <td>@orderLineList.ProductId</td>
+                                <td colspan="2">Description</td>
+                                <td>Rs: @orderLineList.UnitPrice</td>
+                                <td>@orderLineList.Quantity</td>
+                                <td>
+                                    Rs: @(orderLineList.Quantity * orderLineList.UnitPrice)
+                                </td>
+                                <td>
+                                    <a class="btn btn-outline-warning btn-sm" asp-page="OrderLines/Edit">Edit</a>
+                                    <a class="btn btn-outline-danger btn-sm" asp-page="/OrderLines/Delete" asp-route-orderlineId="@orderLineList.Id">Remove</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td>Sorry no products available</td>
+                        </tr>
+                    }
+                }*@
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <label>Grand Total:</label>
+                    </td>
+                    <td><label>Rs: 120.00</label></td>
+                    <td><label class="btn btn-info btn-sm">Confirm Order</label></td>
+                </tr>
+            </table>
+        </form>
+    </div>
 
 @section scripts {
     <script>

@@ -32,45 +32,7 @@
                 </div>
             </div>
 
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalCenterTitle">Add New Product</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="container-fluid">
-                            <br/>
-                            <form method="post">
-                                <div class="form-group">
-                                    <label class="small font-weight-bold" for="Name">Product Name: </label>
-                                    <input type="text" class="form-control" name="Name" id="Name" placeholder="eg: Orange">
-                                </div>
-                                <div class="form-group">
-                                    <label class="small font-weight-bold" for="description">Description:</label>
-                                    <textarea class="form-control" placeholder="Give a description about the product" name="Description" id="description" rows="3"></textarea>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                        <label class="small font-weight-bold" for="UnitPrice">Unit Price:</label>
-                                        <input type="number" class="form-control" placeholder="eg: 12.00" name="UnitPrice" id="UnitPrice">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label class="small font-weight-bold" for="Quantity">Quantity:</label>
-                                        <input type="number" class="form-control" placeholder="eg: 10" name="Quantity" id="Quantity">
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <partial name="PartialView/_CreateProduct" model="@Model.product" />
 
         }
     </div>

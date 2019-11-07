@@ -10,6 +10,7 @@ namespace FoodDemo.Core.ServiceInterface
         IEnumerable<OrderLine> GetOrderLines();
         OrderLine GetOrderLine(int id);
         void Create(OrderLine orderLine);
+        OrderLine Delete(int id);
         int Commit();
     }
 }

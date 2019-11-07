@@ -23,6 +23,7 @@ namespace FoodDemo.Web.Pages.OrderLines
         [BindProperty]
         public OrderLine orderLine { get; set; }
         public int Id { get; set; }
+        public string Message { get; set; }
         
         public IndexModel(IConfiguration configuration,IOrderLineService orderLineService,IProductService productService,ICustomerService customerService)
         {
@@ -37,11 +38,10 @@ namespace FoodDemo.Web.Pages.OrderLines
             //Customer dropdown
             var listOfCustomers = customerService.GetCustomers().ToList();
             customerList = new SelectList(listOfCustomers, "Id", "FirstName");
-
+            Message = this.configuration["Message"];
             orderLines = orderLineService.GetOrderLines();
         } 
 
-        [HttpGet]
         public JsonResult GetProductAutoComplete(string name)
         {
             var query = productService.GetProductByName(name).ToList();
@@ -58,6 +58,5 @@ namespace FoodDemo.Web.Pages.OrderLines
             }
             return RedirectToPage("Index");
         }
-
     }
 }

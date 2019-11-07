@@ -26,6 +26,18 @@ namespace FoodDemo.Core.Services
             db.Add(orderLine);
         }
 
+        public OrderLine Delete(int id)
+        {
+            var orderline = GetOrderLine(id);
+
+            if(orderline != null)
+            {
+                db.OrderLines.Remove(orderline);
+            }
+
+            return orderline;
+        }
+
         public OrderLine GetOrderLine(int id)
         {
             var query = db.OrderLines.Find(id);
