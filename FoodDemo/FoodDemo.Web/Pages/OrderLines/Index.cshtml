@@ -46,34 +46,6 @@
                         <button type="button" class="btn btn-outline-primary btn-sm" onclick="AddOrderLine()">Add Item</button>
                     </td>
                 </tr>
-
-                @*@{
-                    if (@Model.orderLines != null)
-                    {
-                        @foreach (var orderLineList in Model.orderLines)
-                        {
-                            <tr>
-                                <td>@orderLineList.ProductId</td>
-                                <td colspan="2">Description</td>
-                                <td>Rs: @orderLineList.UnitPrice</td>
-                                <td>@orderLineList.Quantity</td>
-                                <td>
-                                    Rs: @(orderLineList.Quantity * orderLineList.UnitPrice)
-                                </td>
-                                <td>
-                                    <a class="btn btn-outline-warning btn-sm" asp-page="OrderLines/Edit">Edit</a>
-                                    <a class="btn btn-outline-danger btn-sm" asp-page="/OrderLines/Delete" asp-route-orderlineId="@orderLineList.Id">Remove</a>
-                                </td>
-                            </tr>
-                        }
-                    }
-                    else
-                    {
-                        <tr>
-                            <td>Sorry no products available</td>
-                        </tr>
-                    }
-                }*@
                 <tr>
                     <td></td>
                     <td></td>
@@ -82,7 +54,9 @@
                     <td>
                         <label>Grand Total:</label>
                     </td>
-                    <td><label>Rs: 120.00</label></td>
+                    <td>
+                    <p id="GrandTotal"></p>
+                    </td>
                     <td><label class="btn btn-info btn-sm">Confirm Order</label></td>
                 </tr>
             </table>

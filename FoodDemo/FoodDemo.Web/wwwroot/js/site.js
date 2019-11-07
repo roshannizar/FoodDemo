@@ -67,10 +67,11 @@ function setSession(order) {
 }
 
 window.onload = function getSession() {
-
     var table = document.getElementById("tableForm");
     var editBtn = document.createElement("input");
     var deleteBtn = document.createElement("input");
+
+    var grandTotal = document.getElementById("GrandTotal");
 
     let count = sessionStorage.getItem("ProductName");
 
@@ -106,8 +107,9 @@ window.onload = function getSession() {
 
     productNameCell.innerHTML = orders[0].productId;
     descriptionCell.innerHTML = orders[0].description;
-    unitPriceCell.innerHTML = orders[0].unitPrice;
+    unitPriceCell.innerHTML = "Rs: "+orders[0].unitPrice;
     quantityCell.innerHTML = orders[0].quantity;
-    totalAmountCell.innerHTML = orders[0].totalAmount;
+    totalAmountCell.innerHTML = "Rs: "+orders[0].totalAmount;
 
+    grandTotal.innerHTML ="Rs: "+orders[0].totalAmount;
 }
