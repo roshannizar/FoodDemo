@@ -48,7 +48,7 @@ namespace FoodDemo.Core.Services
         {
             //var query = (from o in db.OrderLines
             //             join p in db.Products on o.ProductId equals p.Id
-            //             select (o));
+            //             select new {o,p});
 
             var query = db.OrderLines.Include(p => p.Products).ToList();
 

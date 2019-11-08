@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FoodDemo.Core.ServiceInterface;
 using FoodDemo.Data.Entity;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -56,6 +57,9 @@ namespace FoodDemo.Web.Pages.OrderLines
                 orderLineService.Create(orderLine);
                 orderLineService.Commit();
             }
+
+            HttpContext.Session.GetString("OrderItems");
+
             return RedirectToPage("Index");
         }
     }

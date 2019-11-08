@@ -1,9 +1,31 @@
-﻿function StoreOrderLine(order) {
+﻿let count = 0;
+
+function StoreOrderLine(order) {
 
     let orderList = [];
-    orderList.push(order);
+    let sessionCountSize = sessionStorage.getItem("count");
 
-    setSession(orderList);
+    if (sessionCountSize == null) {
+        sessionStorage.setItem("count", 0);
+    }
+
+    if (sessionCountSize != null) {
+        count = parseInt(sessionStorage.getItem("count"));
+    }
+
+    if (sessionCountSize == null) {
+        orderList.push(order);
+        sessionStorage.setItem("OrderItems" + count, JSON.stringify(orderList));
+        count = count + 1;
+    }
+    else {
+        orderList.push(order);
+
+        count = count + 1;
+        sessionStorage.setItem("count", count);
+        sessionStorage.setItem("OrderItems" + count, JSON.stringify(orderList));
+    }
+
 }
 
 function AddOrderLine() {
@@ -16,11 +38,11 @@ function AddOrderLine() {
     var editBtn = document.createElement("input");
     var deleteBtn = document.createElement("input");
     var orderLine = {
-        productId: "",
-        description: "",
-        unitPrice: "",
-        quantity: "",
-        totalAmount: ""
+        "productId": "",
+        "description": "",
+        "unitPrice": "",
+        "quantity": "",
+        "totalAmount": ""
     }
 
     editBtn.setAttribute('type', 'button');
@@ -62,60 +84,69 @@ function AddOrderLine() {
     StoreOrderLine(orderLine);
 }
 
-function setSession(order) {
-    sessionStorage.setItem("ProductName", JSON.stringify(order));
-}
-
 window.onload = function getSession() {
 
     var table = document.getElementById("tableForm");
     var editBtn = document.createElement("input");
     var deleteBtn = document.createElement("input");
-
     var grandTotal = document.getElementById("GrandTotal");
 
-    let count = sessionStorage.getItem("ProductName");
+    let sessionCountSize = sessionStorage.getItem("count");
 
-    var orders = JSON.parse(count);
+    if (sessionCountSize != null) {
+        count = parseInt(sessionStorage.getItem("count"));
 
-    if (count.length != null) {
 
-        console.log(orders);
+        if (count >= 0) {
 
-        editBtn.setAttribute('type', 'button');
-        editBtn.setAttribute('value', 'Edit');
-        editBtn.classList.add("btn");
-        editBtn.classList.add("btn-sm");
-        editBtn.classList.add("btn-outline-warning");
+            for (var i = 0; i <= count; i++) {
 
-        deleteBtn.setAttribute('type', 'button');
-        deleteBtn.setAttribute('value', 'Delete');
-        deleteBtn.classList.add("btn");
-        deleteBtn.classList.add("btn-sm");
-        deleteBtn.classList.add("btn-outline-danger");
+                let sizeOfSession = sessionStorage.getItem("OrderItems" + i);
 
-        var row = table.insertRow(2);
+                var orders = JSON.parse(sizeOfSession);
 
-        var productNameCell = row.insertCell(0);
-        var descriptionCell = row.insertCell(1);
-        descriptionCell.colSpan = 2;
-        var unitPriceCell = row.insertCell(2);
-        var quantityCell = row.insertCell(3);
-        var totalAmountCell = row.insertCell(4);
-        var deleteButtonCell = row.insertCell(5);
-        var editButtonCell = row.insertCell(5);
+                var editBtn = document.createElement("input");
+                var deleteBtn = document.createElement("input");
 
-        deleteButtonCell.appendChild(deleteBtn);
-        editButtonCell.appendChild(editBtn);
+                editBtn.setAttribute('type', 'button');
+                editBtn.setAttribute('value', 'Edit');
+                editBtn.classList.add("btn");
+                editBtn.classList.add("btn-sm");
+                editBtn.classList.add("btn-outline-warning");
 
-        productNameCell.innerHTML = orders[0].productId;
-        descriptionCell.innerHTML = orders[0].description;
-        unitPriceCell.innerHTML = "Rs: " + orders[0].unitPrice;
-        quantityCell.innerHTML = orders[0].quantity;
-        totalAmountCell.innerHTML = "Rs: " + orders[0].totalAmount;
+                deleteBtn.setAttribute('type', 'button');
+                deleteBtn.setAttribute('value', 'Delete');
+                deleteBtn.classList.add("btn");
+                deleteBtn.classList.add("btn-sm");
+                deleteBtn.classList.add("btn-outline-danger");
 
-        grandTotal.innerHTML = "Rs: " + orders[0].totalAmount;
-    } else {
-        console.log("Empty Session storage");
+
+
+                var row = table.insertRow(2);
+
+                var productNameCell = row.insertCell(0);
+                var descriptionCell = row.insertCell(1);
+                descriptionCell.colSpan = 2;
+                var unitPriceCell = row.insertCell(2);
+                var quantityCell = row.insertCell(3);
+                var totalAmountCell = row.insertCell(4);
+                var deleteButtonCell = row.insertCell(5);
+                var editButtonCell = row.insertCell(5);
+
+                deleteButtonCell.appendChild(deleteBtn);
+                editButtonCell.appendChild(editBtn);
+
+
+                productNameCell.innerHTML = orders[0].productId;
+                descriptionCell.innerHTML = orders[0].description;
+                unitPriceCell.innerHTML = "Rs: " + orders[0].unitPrice;
+                quantityCell.innerHTML = orders[0].quantity;
+                totalAmountCell.innerHTML = "Rs: " + orders[0].totalAmount;
+                grandTotal.innerHTML = "Rs: " + orders[0].totalAmount;
+            }
+        }
+    }
+    else {
+        console.log("No session available");
     }
 }
