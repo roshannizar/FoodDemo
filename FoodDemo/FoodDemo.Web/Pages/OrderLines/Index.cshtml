@@ -4,72 +4,76 @@
     ViewData["Title"] = "Order Items";
 }
 
-    <div class="container-fluid">
-        <h2>Order Item(s)</h2>
-        <hr />
-        <label class="font-weight-bold">Customer: </label>
-        <select class="badge badge-dark" asp-for="Id" asp-items="Model.customerList">
-            <option>-- Choose a customer --</option>
-        </select>
-        @Model.Message
-        <form>
-            <hr />
-            <table class="table" id="tableForm">
-                <tr>
-                    <th>Product</th>
-                    <th colspan="2">Description</th>
-                    <th>Unit Price</th>
-                    <th>Quantity</th>
-                    <th>Total Amount</th>
-                    <th>Controls</th>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" class="form-control col-md-8" placeholder="eg: Orange" name="ProductId" id="productname" />
-                    </td>
-                    <td colspan="2">
-                        <p name="Description">description</p>
-                        <input type="text" hidden value="Description" id="description"/>
-                    </td>
-                    <td>
-                        <p name="UnitPrice">Rs: 12.00</p>
-                        <input type="text" hidden name="UnitPrice" value="12.00" id="unitprice"/>
-                    </td>
-                    <td>
-                        <input type="number" class="form-control col-md-4" placeholder="eg: 10" name="Quantity" id="quantity" />
-                    </td>
-                    <td>
-                        <p id="totalamount">Rs: 120.00</p>
-                        <input type="hidden" name="Status" id="status" value="0" />
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="AddOrderLine()">Add Item</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <label>Grand Total:</label>
-                    </td>
-                    <td>
-                    <p id="GrandTotal"></p>
-                    </td>
-                    <td><label class="btn btn-info btn-sm">Confirm Order</label></td>
-                </tr>
-            </table>
-        </form>
-    </div>
+<div class="container-fluid">
+    <h2>Order Item(s)</h2>
+    <hr />
+    <label class="font-weight-bold">Customer: </label>
+    <select class="badge badge-dark" asp-for="Id" asp-items="Model.customerList">
+        <option>-- Choose a customer --</option>
+    </select>
+    @Model.Message
+
+    <hr />
+    <table class="table" id="tableForm">
+        <tr>
+            <th>Product</th>
+            <th colspan="2">Description</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Total Amount</th>
+            <th>Controls</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" class="form-control col-md-8" placeholder="eg: Orange" name="ProductId" id="productname" />
+            </td>
+            <td colspan="2">
+                <p name="Description">description</p>
+                <input type="text" hidden value="Description" id="description" />
+            </td>
+            <td>
+                <p name="UnitPrice">Rs: 12.00</p>
+                <input type="text" hidden name="UnitPrice" value="12.00" id="unitprice" />
+            </td>
+            <td>
+                <input type="number" class="form-control col-md-4" placeholder="eg: 10" name="Quantity" id="quantity" />
+            </td>
+            <td>
+                <p id="totalamount">Rs: 120.00</p>
+                <input type="hidden" name="Status" id="status" value="0" />
+            </td>
+            <td>
+                <button type="button" class="btn btn-outline-primary btn-sm" onclick="AddOrderLine()">Add Item</button>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                <label>Grand Total:</label>
+            </td>
+            <td>
+                <p id="GrandTotal"></p>
+            </td>
+            <td>
+                <form method="post">
+                    <button type="submit" class="btn btn-info btn-sm">Confirm Order</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
 
 @section scripts {
     <script>
         $(document).ready(function () {
-            $('#Name').keyup({
-        source:'OrderLines/Index'
-    });
-});
+            $('#productname').keyup({
+                source: '/OrderLines/Index',
+                type: 'GET'
+            });
+        });
     </script>
 }
 

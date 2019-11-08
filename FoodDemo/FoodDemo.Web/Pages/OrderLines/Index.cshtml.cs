@@ -40,10 +40,12 @@ namespace FoodDemo.Web.Pages.OrderLines
             var listOfCustomers = customerService.GetCustomers().ToList();
             customerList = new SelectList(listOfCustomers, "Id", "FirstName");
             Message = this.configuration["Message"];
-            orderLines = orderLineService.GetOrderLines();
+
+            var items = HttpContext.Session.GetString("OrderItems");
+            Console.WriteLine(items);
         } 
 
-        public JsonResult GetProductAutoComplete(string name)
+        public IActionResult GetProductAutoComplete(string name)
         {
             var query = productService.GetProductByName(name).ToList();
 
@@ -52,14 +54,7 @@ namespace FoodDemo.Web.Pages.OrderLines
 
         public IActionResult OnPost()
         {
-            if(ModelState.IsValid)
-            {
-                orderLineService.Create(orderLine);
-                orderLineService.Commit();
-            }
-
-            HttpContext.Session.GetString("OrderItems");
-
+            
             return RedirectToPage("Index");
         }
     }

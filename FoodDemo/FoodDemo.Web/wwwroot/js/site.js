@@ -1,4 +1,5 @@
-﻿let count = 0;
+﻿var total = 0;
+var count = 0;
 
 function StoreOrderLine(order) {
 
@@ -37,6 +38,7 @@ function AddOrderLine() {
     var quantity = document.getElementById("quantity").value;
     var editBtn = document.createElement("input");
     var deleteBtn = document.createElement("input");
+    var grandTotal = document.getElementById("GrandTotal");
     var orderLine = {
         "productId": "",
         "description": "",
@@ -80,6 +82,8 @@ function AddOrderLine() {
     orderLine.unitPrice = unitPrice;
     orderLine.quantity = quantity;
     orderLine.totalAmount = (unitPrice * quantity);
+    total = total + (unitPrice * quantity);
+    grandTotal.innerHTML = "Rs: " + total;
 
     StoreOrderLine(orderLine);
 }
@@ -142,11 +146,14 @@ window.onload = function getSession() {
                 unitPriceCell.innerHTML = "Rs: " + orders[0].unitPrice;
                 quantityCell.innerHTML = orders[0].quantity;
                 totalAmountCell.innerHTML = "Rs: " + orders[0].totalAmount;
-                grandTotal.innerHTML = "Rs: " + orders[0].totalAmount;
+
+                total = total + parseInt(orders[0].totalAmount);
             }
         }
     }
     else {
         console.log("No session available");
     }
+
+    grandTotal.innerHTML = "Rs: " + total;
 }
