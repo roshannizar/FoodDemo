@@ -67,6 +67,7 @@ function setSession(order) {
 }
 
 window.onload = function getSession() {
+
     var table = document.getElementById("tableForm");
     var editBtn = document.createElement("input");
     var deleteBtn = document.createElement("input");
@@ -77,39 +78,44 @@ window.onload = function getSession() {
 
     var orders = JSON.parse(count);
 
-    console.log(orders);
+    if (count.length != null) {
 
-    editBtn.setAttribute('type', 'button');
-    editBtn.setAttribute('value', 'Edit');
-    editBtn.classList.add("btn");
-    editBtn.classList.add("btn-sm");
-    editBtn.classList.add("btn-outline-warning");
+        console.log(orders);
 
-    deleteBtn.setAttribute('type', 'button');
-    deleteBtn.setAttribute('value', 'Delete');
-    deleteBtn.classList.add("btn");
-    deleteBtn.classList.add("btn-sm");
-    deleteBtn.classList.add("btn-outline-danger");
+        editBtn.setAttribute('type', 'button');
+        editBtn.setAttribute('value', 'Edit');
+        editBtn.classList.add("btn");
+        editBtn.classList.add("btn-sm");
+        editBtn.classList.add("btn-outline-warning");
 
-    var row = table.insertRow(2);
+        deleteBtn.setAttribute('type', 'button');
+        deleteBtn.setAttribute('value', 'Delete');
+        deleteBtn.classList.add("btn");
+        deleteBtn.classList.add("btn-sm");
+        deleteBtn.classList.add("btn-outline-danger");
 
-    var productNameCell = row.insertCell(0);
-    var descriptionCell = row.insertCell(1);
-    descriptionCell.colSpan = 2;
-    var unitPriceCell = row.insertCell(2);
-    var quantityCell = row.insertCell(3);
-    var totalAmountCell = row.insertCell(4);
-    var deleteButtonCell = row.insertCell(5);
-    var editButtonCell = row.insertCell(5);
+        var row = table.insertRow(2);
 
-    deleteButtonCell.appendChild(deleteBtn);
-    editButtonCell.appendChild(editBtn);
+        var productNameCell = row.insertCell(0);
+        var descriptionCell = row.insertCell(1);
+        descriptionCell.colSpan = 2;
+        var unitPriceCell = row.insertCell(2);
+        var quantityCell = row.insertCell(3);
+        var totalAmountCell = row.insertCell(4);
+        var deleteButtonCell = row.insertCell(5);
+        var editButtonCell = row.insertCell(5);
 
-    productNameCell.innerHTML = orders[0].productId;
-    descriptionCell.innerHTML = orders[0].description;
-    unitPriceCell.innerHTML = "Rs: "+orders[0].unitPrice;
-    quantityCell.innerHTML = orders[0].quantity;
-    totalAmountCell.innerHTML = "Rs: "+orders[0].totalAmount;
+        deleteButtonCell.appendChild(deleteBtn);
+        editButtonCell.appendChild(editBtn);
 
-    grandTotal.innerHTML ="Rs: "+orders[0].totalAmount;
+        productNameCell.innerHTML = orders[0].productId;
+        descriptionCell.innerHTML = orders[0].description;
+        unitPriceCell.innerHTML = "Rs: " + orders[0].unitPrice;
+        quantityCell.innerHTML = orders[0].quantity;
+        totalAmountCell.innerHTML = "Rs: " + orders[0].totalAmount;
+
+        grandTotal.innerHTML = "Rs: " + orders[0].totalAmount;
+    } else {
+        console.log("Empty Session storage");
+    }
 }

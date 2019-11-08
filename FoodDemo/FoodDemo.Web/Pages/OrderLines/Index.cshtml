@@ -1,11 +1,11 @@
 ﻿@page
 @model FoodDemo.Web.Pages.OrderLines.IndexModel
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Order Items";
 }
 
     <div class="container-fluid">
-        <h2>Order Line</h2>
+        <h2>Order Item(s)</h2>
         <hr />
         <label class="font-weight-bold">Customer: </label>
         <select class="badge badge-dark" asp-for="Id" asp-items="Model.customerList">
