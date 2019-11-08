@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 
 namespace FoodDemo.Web.Pages.OrderLines
 {
@@ -39,10 +40,10 @@ namespace FoodDemo.Web.Pages.OrderLines
             //Customer dropdown
             var listOfCustomers = customerService.GetCustomers().ToList();
             customerList = new SelectList(listOfCustomers, "Id", "FirstName");
+
             Message = this.configuration["Message"];
 
-            var items = HttpContext.Session.GetString("OrderItems");
-            Console.WriteLine(items);
+            HttpContext.Session.SetString("vola", "Vola amigo");
         } 
 
         public IActionResult GetProductAutoComplete(string name)
@@ -54,7 +55,16 @@ namespace FoodDemo.Web.Pages.OrderLines
 
         public IActionResult OnPost()
         {
-            
+            var items = JsonConvert.DeserializeObject<OrderLine>(HttpContext.Session.GetString("OrderItems0"));
+
+            if (items != null)
+            {
+                TempData["Message"] = items;
+            }
+            else
+            {
+                TempData["Message"] = "No Session Saved";
+            }
             return RedirectToPage("Index");
         }
     }

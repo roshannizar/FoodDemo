@@ -4,27 +4,27 @@ var count = 0;
 function StoreOrderLine(order) {
 
     let orderList = [];
-    let sessionCountSize = sessionStorage.getItem("count");
+    let sessionCountSize = localStorage.getItem("count");
 
     if (sessionCountSize == null) {
-        sessionStorage.setItem("count", 0);
+        localStorage.setItem("count", 0);
     }
 
     if (sessionCountSize != null) {
-        count = parseInt(sessionStorage.getItem("count"));
+        count = parseInt(localStorage.getItem("count"));
     }
 
     if (sessionCountSize == null) {
         orderList.push(order);
-        sessionStorage.setItem("OrderItems" + count, JSON.stringify(orderList));
+        localStorage.setItem("OrderItems" + count, JSON.stringify(orderList));
         count = count + 1;
     }
     else {
         orderList.push(order);
 
         count = count + 1;
-        sessionStorage.setItem("count", count);
-        sessionStorage.setItem("OrderItems" + count, JSON.stringify(orderList));
+        localStorage.setItem("count", count);
+        localStorage.setItem("OrderItems" + count, JSON.stringify(orderList));
     }
 
 }
@@ -95,18 +95,17 @@ window.onload = function getSession() {
     var deleteBtn = document.createElement("input");
     var grandTotal = document.getElementById("GrandTotal");
 
-    let sessionCountSize = sessionStorage.getItem("count");
+    let sessionCountSize = localStorage.getItem("count");
 
     if (sessionCountSize != null) {
-        count = parseInt(sessionStorage.getItem("count"));
+        count = parseInt(localStorage.getItem("count"));
 
 
         if (count >= 0) {
 
             for (var i = 0; i <= count; i++) {
 
-                let sizeOfSession = sessionStorage.getItem("OrderItems" + i);
-
+                let sizeOfSession = localStorage.getItem("OrderItems" + i);
                 var orders = JSON.parse(sizeOfSession);
 
                 var editBtn = document.createElement("input");

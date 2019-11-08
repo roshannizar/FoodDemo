@@ -7,8 +7,8 @@
 <div class="container-fluid">
     <h2>Order Item(s)</h2>
     <hr />
-    <label class="font-weight-bold">Customer: </label>
-    <select class="badge badge-dark" asp-for="Id" asp-items="Model.customerList">
+    <label class="font-weight-bold">Customer Name: </label>
+    <select class="badge badge-secondary" asp-for="Id" asp-items="Model.customerList">
         <option>-- Choose a customer --</option>
     </select>
     @Model.Message
@@ -64,6 +64,7 @@
             </td>
         </tr>
     </table>
+    @Model.Message
 </div>
 
 @section scripts {
