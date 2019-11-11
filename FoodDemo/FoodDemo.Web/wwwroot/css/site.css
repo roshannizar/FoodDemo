@@ -16,3 +16,8 @@
 .small-width {
     width:5%;
 }
+.no-outline {
+    outline:none;
+    border:3px solid;
+    background-color:transparent;
+}

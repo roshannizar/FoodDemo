@@ -71,8 +71,6 @@ namespace FoodDemo.Data.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.HasIndex("OrderLineId");
-
                     b.ToTable("Orders");
                 });
 
@@ -82,6 +80,9 @@ namespace FoodDemo.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("OrderLineId")
+                        .HasColumnType("int");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
@@ -96,6 +97,8 @@ namespace FoodDemo.Data.Migrations
                         .HasColumnType("float");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("OrderLineId");
 
                     b.HasIndex("ProductId");
 
@@ -135,16 +138,14 @@ namespace FoodDemo.Data.Migrations
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("FoodDemo.Data.Entity.OrderLine", "OrderLines")
-                        .WithMany()
-                        .HasForeignKey("OrderLineId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("FoodDemo.Data.Entity.OrderLine", b =>
                 {
+                    b.HasOne("FoodDemo.Data.Entity.Order", null)
+                        .WithMany("OrderLines")
+                        .HasForeignKey("OrderLineId");
+
                     b.HasOne("FoodDemo.Data.Entity.Product", "Products")
                         .WithMany()
                         .HasForeignKey("ProductId")

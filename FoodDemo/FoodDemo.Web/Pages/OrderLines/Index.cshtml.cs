@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using FoodDemo.Core.ServiceInterface;
 using FoodDemo.Data.Entity;
@@ -22,10 +23,12 @@ namespace FoodDemo.Web.Pages.OrderLines
         public IEnumerable<OrderLine> orderLines { get; set; }
         public IEnumerable<Product> products { get; set; }
         public SelectList customerList { get; set; }
+        public SelectList productList { get; set; }
         [BindProperty]
         public OrderLine orderLine { get; set; }
         public int Id { get; set; }
-        public string Message { get; set; }
+        public string Name { get; set; }
+        public string productname { get; set; }
         
         public IndexModel(IConfiguration configuration,IOrderLineService orderLineService,IProductService productService,ICustomerService customerService)
         {
@@ -41,31 +44,10 @@ namespace FoodDemo.Web.Pages.OrderLines
             var listOfCustomers = customerService.GetCustomers().ToList();
             customerList = new SelectList(listOfCustomers, "Id", "FirstName");
 
-            Message = this.configuration["Message"];
-
-            HttpContext.Session.SetString("vola", "Vola amigo");
+            var listOfProducts = productService.GetProducts().ToList();
+            productList = new SelectList(listOfProducts, "Name", "Name");
         } 
 
-        public IActionResult GetProductAutoComplete(string name)
-        {
-            var query = productService.GetProductByName(name).ToList();
-
-            return new JsonResult(query);
-        }
-
-        public IActionResult OnPost()
-        {
-            var items = JsonConvert.DeserializeObject<OrderLine>(HttpContext.Session.GetString("OrderItems0"));
-
-            if (items != null)
-            {
-                TempData["Message"] = items;
-            }
-            else
-            {
-                TempData["Message"] = "No Session Saved";
-            }
-            return RedirectToPage("Index");
-        }
+        
     }
 }

@@ -4,77 +4,69 @@
     ViewData["Title"] = "Order Items";
 }
 
-<div class="container-fluid">
-    <h2>Order Item(s)</h2>
-    <hr />
-    <label class="font-weight-bold">Customer Name: </label>
-    <select class="badge badge-secondary" asp-for="Id" asp-items="Model.customerList">
-        <option>-- Choose a customer --</option>
-    </select>
-    @Model.Message
+    <div class="container-fluid">
+        <h2>Order Item(s)</h2>
+        <hr />
+        <label class="font-weight-bold">Customer Name: </label>
+        <select class="badge badge-secondary" asp-for="Id" asp-items="Model.customerList">
+            <option>-- Choose a customer --</option>
+        </select>
 
-    <hr />
-    <table class="table" id="tableForm">
-        <tr>
-            <th>Product</th>
-            <th colspan="2">Description</th>
-            <th>Unit Price</th>
-            <th>Quantity</th>
-            <th>Total Amount</th>
-            <th>Controls</th>
-        </tr>
-        <tr>
-            <td>
-                <input type="text" class="form-control col-md-8" placeholder="eg: Orange" name="ProductId" id="productname" />
-            </td>
-            <td colspan="2">
-                <p name="Description">description</p>
-                <input type="text" hidden value="Description" id="description" />
-            </td>
-            <td>
-                <p name="UnitPrice">Rs: 12.00</p>
-                <input type="text" hidden name="UnitPrice" value="12.00" id="unitprice" />
-            </td>
-            <td>
-                <input type="number" class="form-control col-md-4" placeholder="eg: 10" name="Quantity" id="quantity" />
-            </td>
-            <td>
-                <p id="totalamount">Rs: 120.00</p>
-                <input type="hidden" name="Status" id="status" value="0" />
-            </td>
-            <td>
-                <button type="button" class="btn btn-outline-primary btn-sm" onclick="AddOrderLine()">Add Item</button>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-                <label>Grand Total:</label>
-            </td>
-            <td>
-                <p id="GrandTotal"></p>
-            </td>
-            <td>
-                <form method="post">
-                    <button type="submit" class="btn btn-info btn-sm">Confirm Order</button>
-                </form>
-            </td>
-        </tr>
-    </table>
-    @Model.Message
-</div>
+        <hr />
+        <table class="table" id="tableForm">
+            <tr>
+                <th>Product</th>
+                <th colspan="2">Description</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Total Amount</th>
+                <th colspan="2">Controls</th>
+            </tr>
+            <tr>
+                <td>
+                    @*<input type="text" id="productname" onkeyup="ShowProduct(this.value)" placeholder="Enter product name"/>*@
+                    <select class="badge" onchange="ShowProduct(this.value)" asp-for="Name" id="productname" name="ProductId" asp-items="Model.productList">
+                        <option>-- Choose a product --</option>
+                    </select>
+                </td>
+                <td colspan="2">
+                    <p name="Description" id="description">description</p>
+                    <input type="text" hidden value="Description" id="description" />
+                </td>
+                <td>
+                    <p name="UnitPrice" id="unitprice">Rs: 12.00</p>
+                    <input type="text" hidden name="UnitPrice" value="12.00" id="unitprice" />
+                </td>
+                <td>
+                    <input type="number" class="form-control col-md-4" placeholder="eg: 10" onchange="calTotal(this.value)" name="Quantity" id="quantity" />
+                </td>
+                <td>
+                    <p id="totalamount">Rs: 120.00</p>
+                    <input type="hidden" name="Status" id="status" value="0" />
+                </td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary btn-sm" onclick="AddOrderLine()">Add Item</button>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <label>Grand Total:</label>
+                </td>
+                <td>
+                    <p id="GrandTotal"></p>
+                </td>
+                <td>
+                    <button type="submit" id="test" class="btn btn-info btn-sm">Confirm Order</button>
+                </td>
+            </tr>
+        </table>
 
-@section scripts {
-    <script>
-        $(document).ready(function () {
-            $('#productname').keyup({
-                source: '/OrderLines/Index',
-                type: 'GET'
-            });
-        });
-    </script>
-}
+        <partial name="./Products/PartialView/_CreateProduct" model="@Model.products" />
+
+    </div>
 

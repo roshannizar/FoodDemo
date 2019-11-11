@@ -117,8 +117,10 @@ C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcor
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.TagHelpers.output.cache
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.RazorCoreGenerate.cache
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\Customers\Index.cshtml.g.cs
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\Customers\PartialView\_CreateCustomer.cshtml.g.cs
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\Customers\PartialView\_List.cshtml.g.cs
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\Index.cshtml.g.cs
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\OrderLines\Delete.cshtml.g.cs
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\OrderLines\Index.cshtml.g.cs
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\Orders\Index.cshtml.g.cs
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\Products\Index.cshtml.g.cs
@@ -133,5 +135,3 @@ C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcor
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.csproj.CopyComplete
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.dll
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.pdb
-C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\Customers\PartialView\_CreateCustomer.cshtml.g.cs
-C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\OrderLines\Delete.cshtml.g.cs

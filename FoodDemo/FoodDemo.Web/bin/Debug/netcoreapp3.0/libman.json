@@ -13,6 +13,10 @@
     {
       "library": "jquery-autocomplete@1.0.7",
       "destination": "wwwroot/jquery-autocomplete/"
+    },
+    {
+      "library": "datatables@1.10.19",
+      "destination": "wwwroot/datatables/"
     }
   ]
 }

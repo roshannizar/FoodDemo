@@ -12,7 +12,7 @@ namespace FoodDemo.Data.Entity
         [Required]
         public int OrderLineId { get; set; }
         [ForeignKey("OrderLineId")]
-        public OrderLine OrderLines { get; set; }
+        public ICollection<OrderLine> OrderLines { get; set; }
         public int CustomerId { get; set; }
         [ForeignKey("CustomerId")]
         public Customer Customers { get; set; }

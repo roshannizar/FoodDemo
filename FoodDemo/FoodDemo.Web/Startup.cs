@@ -8,6 +8,7 @@ using FoodDemo.Data.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,9 +34,22 @@ namespace FoodDemo.Web
                 options.UseSqlServer(configuration.GetConnectionString("FoodDemoDb"));
             });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder =>
+                    {
+                        builder
+                            .AllowAnyOrigin()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                    });
+            });
+
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<IOrderLineService, OrderLineService>();
+
 
             services.AddControllers();
             services.AddRazorPages();
@@ -52,15 +66,19 @@ namespace FoodDemo.Web
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseDefaultFiles();
             app.UseStaticFiles();
-            app.UseRouting();
+            app.UseHttpsRedirection();
             app.UseSession();
+            app.UseRouting();
+            app.UseCors("AllowAllOrigins");
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
                 endpoints.MapRazorPages();
             });
+
         }
     }
 }
