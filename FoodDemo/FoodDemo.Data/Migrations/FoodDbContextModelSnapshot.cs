@@ -61,9 +61,6 @@ namespace FoodDemo.Data.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("OrderLineId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -81,7 +78,7 @@ namespace FoodDemo.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("OrderLineId")
+                    b.Property<int>("OrderId")
                         .HasColumnType("int");
 
                     b.Property<int>("ProductId")
@@ -98,7 +95,7 @@ namespace FoodDemo.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("OrderLineId");
+                    b.HasIndex("OrderId");
 
                     b.HasIndex("ProductId");
 
@@ -142,9 +139,11 @@ namespace FoodDemo.Data.Migrations
 
             modelBuilder.Entity("FoodDemo.Data.Entity.OrderLine", b =>
                 {
-                    b.HasOne("FoodDemo.Data.Entity.Order", null)
+                    b.HasOne("FoodDemo.Data.Entity.Order", "Orders")
                         .WithMany("OrderLines")
-                        .HasForeignKey("OrderLineId");
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("FoodDemo.Data.Entity.Product", "Products")
                         .WithMany()

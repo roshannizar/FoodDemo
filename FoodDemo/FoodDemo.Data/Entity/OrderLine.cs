@@ -11,7 +11,11 @@ namespace FoodDemo.Data.Entity
         public int Id { get; set; }
         public int ProductId { get; set; }
         [ForeignKey("ProductId")]
-        public Product Products { get; set; }
+        public virtual Product Products { get; set; }
+
+        public int OrderId { get; set; }
+        [ForeignKey("OrderId")]
+        public virtual Order Orders { get; set; }
         [Required]
         public int Quantity { get; set; }
         [Required]

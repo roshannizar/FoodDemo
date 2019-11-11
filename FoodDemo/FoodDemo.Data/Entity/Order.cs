@@ -9,13 +9,10 @@ namespace FoodDemo.Data.Entity
     public class Order
     {
         public int Id { get; set; }
-        [Required]
-        public int OrderLineId { get; set; }
-        [ForeignKey("OrderLineId")]
-        public ICollection<OrderLine> OrderLines { get; set; }
+        public virtual ICollection<OrderLine> OrderLines { get; set; }
         public int CustomerId { get; set; }
         [ForeignKey("CustomerId")]
-        public Customer Customers { get; set; }
+        public virtual Customer Customers { get; set; }
         [Required]
         public DateTime Date { get; set; }
         [Required]

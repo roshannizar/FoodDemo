@@ -8,7 +8,7 @@
         <h2>Order Item(s)</h2>
         <hr />
         <label class="font-weight-bold">Customer Name: </label>
-        <select class="badge badge-secondary" asp-for="Id" asp-items="Model.customerList">
+        <select class="badge badge-secondary" id="customername" asp-for="Id" asp-items="Model.customerList">
             <option>-- Choose a customer --</option>
         </select>
 
@@ -24,8 +24,8 @@
             </tr>
             <tr>
                 <td>
-                    @*<input type="text" id="productname" onkeyup="ShowProduct(this.value)" placeholder="Enter product name"/>*@
-                    <select class="badge" onchange="ShowProduct(this.value)" asp-for="Name" id="productname" name="ProductId" asp-items="Model.productList">
+                    <input type="text" id="productId" hidden/>
+                    <select class="badge" onchange="ShowProduct(this.value,'all')" asp-for="Name" id="productname" name="ProductId" asp-items="Model.productList">
                         <option>-- Choose a product --</option>
                     </select>
                 </td>
@@ -61,7 +61,7 @@
                     <p id="GrandTotal"></p>
                 </td>
                 <td>
-                    <button type="submit" id="test" class="btn btn-info btn-sm">Confirm Order</button>
+                    <button type="button" class="btn btn-info btn-sm" onclick="CreateOrder()">Confirm Order</button>
                 </td>
             </tr>
         </table>

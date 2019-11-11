@@ -24,7 +24,8 @@ namespace FoodDemo.Web.Api
         [HttpGet]
         public IEnumerable<Order> Get()
         {
-            var query = db.Orders.Include(o => o.OrderLines).ToList();
+            var query = from o in db.Orders
+                        select o;
 
             return query;
         }
@@ -33,10 +34,17 @@ namespace FoodDemo.Web.Api
         [HttpPost]
         public async Task<ActionResult<Order>> Post([FromBody]Order order)
         {
-            db.Orders.Add(order);
-            await db.SaveChangesAsync();
+            if (order != null)
+            {
+                db.Orders.Add(order);
+                await db.SaveChangesAsync();
 
-            return order;
+                return Ok("Created Successfully");
+            } else
+            {
+                return BadRequest("Order was missing some field's maybe");
+            }
+
         }
 
         // PUT api/<controller>/5
