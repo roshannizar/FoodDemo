@@ -49,6 +49,7 @@ namespace FoodDemo.Web
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<IOrderLineService, OrderLineService>();
+            services.AddScoped<IOrderService,OrderService>();
 
 
             services.AddControllers();

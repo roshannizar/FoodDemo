@@ -30,8 +30,7 @@ function CreateOrder() {
     GetOrderId();
 
     if (orderId) {
-        //CreateOrderLine();
-        console.log(orderId);
+        CreateOrderLine();
     }
 }
 
@@ -49,7 +48,7 @@ function GetOrderId() {
                 
                 console.log("No orders created!");
             } else {
-                orderId = orderIdTemp[0].id;
+                orderId = orderIdTemp[orderIdTemp.length-1].id;
             }
 
         }

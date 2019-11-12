@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace FoodDemo.Core.Services
 {
@@ -36,9 +37,7 @@ namespace FoodDemo.Core.Services
 
         public IEnumerable<Order> GetOrders()
         {
-            var query = from o in db.Orders
-                   orderby o.Status
-                   select o;
+            var query = db.Orders.Include(c => c.Customers).ToList();
             return query;
         }
     }

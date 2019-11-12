@@ -21,4 +21,8 @@
     <ProjectReference Include="..\FoodDemo.Core\FoodDemo.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\OrderLines\PartialView\" />
+  </ItemGroup>
+
 </Project>

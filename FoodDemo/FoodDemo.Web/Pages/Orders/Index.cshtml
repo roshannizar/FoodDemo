@@ -6,7 +6,27 @@
 
     <div class="container-fluid">
         <h2>Orders</h2>
-
         <a class="btn btn-outline-secondary btn-sm" asp-page="../OrderLines/Index">New Order</a>
+        <br /><br />
+
+        @{ 
+            <div class="container-fluid">
+                        <div class="row">
+                            @if (@Model.Orders != null)
+                            {
+                                foreach (var orders in Model.Orders)
+                                {
+                                    <partial name="PartialView/_List" model="orders"/>
+                                }
+                            }
+                            else
+                            {
+                                <div class="alert alert-danger" role="alert">
+                                    <h4 class="alert-heading">Product is empty!</h4>
+                                </div>
+                            }
+                        </div>
+            </div>
+        }
     </div>
 
