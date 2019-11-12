@@ -28,7 +28,7 @@ namespace FoodDemo.Core.Services
 
         public OrderLine Delete(int id)
         {
-            var orderline = GetOrderLine(id);
+            var orderline = GetOrderLineById(id);
 
             if(orderline != null)
             {
@@ -38,7 +38,13 @@ namespace FoodDemo.Core.Services
             return orderline;
         }
 
-        public OrderLine GetOrderLine(int id)
+        public IEnumerable<OrderLine> GetOrderLine(int id)
+        {
+            var query = db.OrderLines.Include(p => p.Products).Include(o => o.Orders).Where(o => o.OrderId == id).ToList();
+            return query;
+        }
+
+        public OrderLine GetOrderLineById(int id)
         {
             var query = db.OrderLines.Find(id);
             return query;

@@ -81,9 +81,13 @@ function CreateOrderLine() {
 
             xhttp[i].open("POST", 'api/orderline', true);
             xhttp[i].setRequestHeader('Content-Type', 'application/json');
-            xhttp[i].send(JSON.stringify(orderLineData));           
+            xhttp[i].send(JSON.stringify(orderLineData));  
+
+
         }
         sessionStorage.clear();
+        alert("Order has been placed!");
+        location.replace("/Orders/Index");
     } else {
         console.log("New Order placement needed!");
     }
