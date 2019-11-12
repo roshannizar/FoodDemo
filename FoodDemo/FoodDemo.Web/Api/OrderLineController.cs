@@ -38,12 +38,12 @@ namespace FoodDemo.Web.Api
 
         // POST api/<controller>
         [HttpPost]
-        public async Task<ActionResult<OrderLine>> Post([FromBody]OrderLine orderLine)
+        public async Task<ActionResult<OrderLine>> Post([FromBody]OrderLine OrderLines)
         {
-            db.OrderLines.Add(orderLine);
+            db.OrderLines.Add(OrderLines);
             await db.SaveChangesAsync();
 
-            return orderLine;
+            return OrderLines;
         }
 
         // PUT api/<controller>/5

@@ -24,7 +24,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="text" id="productId" hidden/>
+                    <input type="text" id="productId" hidden />
                     <select class="badge" onchange="ShowProduct(this.value,'all')" asp-for="Name" id="productname" name="ProductId" asp-items="Model.productList">
                         <option>-- Choose a product --</option>
                     </select>
@@ -61,12 +61,29 @@
                     <p id="GrandTotal"></p>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-info btn-sm" onclick="CreateOrder()">Confirm Order</button>
+                    <button type="button" class="btn btn-info btn-sm" onclick="CreateOrder()" data-toggle="modal" data-target="#exampleModal">Confirm Order</button>
                 </td>
             </tr>
         </table>
 
-        <partial name="./Products/PartialView/_CreateProduct" model="@Model.products" />
-
+        <div onload="GetOrderId()" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Press save changes to save your order!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="CreateOrderLine()">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 

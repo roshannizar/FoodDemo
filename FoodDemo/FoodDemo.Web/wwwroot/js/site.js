@@ -26,12 +26,6 @@ function CreateOrder() {
         xhttp.setRequestHeader('Content-Type', 'application/json');
         xhttp.send(JSON.stringify(order));
     }
-
-    GetOrderId();
-
-    if (orderId) {
-        CreateOrderLine();
-    }
 }
 
 function GetOrderId() {
@@ -45,7 +39,6 @@ function GetOrderId() {
             var orderIdTemp = JSON.parse(this.responseText);
 
             if (!orderIdTemp) {
-                
                 console.log("No orders created!");
             } else {
                 orderId = orderIdTemp[orderIdTemp.length-1].id;
@@ -56,40 +49,42 @@ function GetOrderId() {
 }
 
 function CreateOrderLine() {
-    var xhttp = [];
+    GetOrderId();
 
-    var orderLineData = {
-        productId: "",
-        quantity: "",
-        unitPrice: "",
-        status: 1,
-        orderId: ""
-    };
+    if (orderId) {
+        var xhttp = [];
 
-    var postIterator = this.sessionStorage.getItem("count");
-    if (parseInt(postIterator) >= 0) {
+        var orderLineData = {
+            productId: "",
+            quantity: "",
+            unitPrice: "",
+            status: 1,
+            orderId: ""
+        };
 
-        for (var i = 0; i <= parseInt(postIterator); i++) {
-            var sessionTemp = sessionStorage.getItem("OrderItems" + i);
+        var postIterator = this.sessionStorage.getItem("count");
+        if (parseInt(postIterator) >= 0) {
 
-            xhttp[i] = new XMLHttpRequest();
-            var session = JSON.parse(sessionTemp);
-            orderLineData.productId = parseInt(session.productId);
-            orderLineData.quantity = parseInt(session.quantity);
-            orderLineData.unitPrice = parseInt(session.unitPrice);
-            orderLineData.orderId = orderId;
+            for (var i = 0; i <= parseInt(postIterator); i++) {
+                var sessionTemp = sessionStorage.getItem("OrderItems" + i);
 
-            xhttp[i].open("POST", 'api/orderline', true);
-            xhttp[i].setRequestHeader('Content-Type', 'application/json');
-            xhttp[i].send(JSON.stringify(orderLineData));  
+                xhttp[i] = new XMLHttpRequest();
+                var session = JSON.parse(sessionTemp);
+                orderLineData.productId = parseInt(session.productId);
+                orderLineData.quantity = parseInt(session.quantity);
+                orderLineData.unitPrice = parseInt(session.unitPrice);
+                orderLineData.orderId = orderId;
 
-
+                xhttp[i].open("POST", 'api/orderline', true);
+                xhttp[i].setRequestHeader('Content-Type', 'application/json');
+                xhttp[i].send(JSON.stringify(orderLineData));
+            }
+            sessionStorage.clear();
+            alert("Order has been placed!");
+            location.replace("/Orders/Index");
+        } else {
+            console.log("New Order placement needed!");
         }
-        sessionStorage.clear();
-        alert("Order has been placed!");
-        location.replace("/Orders/Index");
-    } else {
-        console.log("New Order placement needed!");
     }
 }
 
