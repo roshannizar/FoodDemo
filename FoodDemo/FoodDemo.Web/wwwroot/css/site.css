@@ -3,12 +3,18 @@
 .border-color-strip {
     border-top:4px solid #28334AFF;
 }
+.border-color-left {
+    border-left:4px solid #28334AFF;
+}
 .margin {
     margin-right:10px;
     margin-bottom:10px;
 }
 .right {
     float:right
+}
+.left {
+    float:left;
 }
 .slight-top {
     margin-top:10px;

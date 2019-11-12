@@ -1,0 +1,12 @@
+﻿@using FoodDemo.Data.Entity
+
+@model OrderLine
+
+    <div class="card margin border-color-left" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Products.Name</h5>
+            <hr />
+            <p class="card-text">@Model.Products.Description</p>
+            <a href="#" class="badge badge-primary">Quantity: @Model.Products.Quantity</a>
+        </div>
+    </div>

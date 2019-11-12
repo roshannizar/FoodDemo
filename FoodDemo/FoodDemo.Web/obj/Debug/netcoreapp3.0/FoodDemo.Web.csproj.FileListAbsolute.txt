@@ -135,4 +135,5 @@ C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcor
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.dll
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\FoodDemo.Web.pdb
 C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\Orders\PartialView\_List.cshtml.g.cs
-C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\OrderLines\OrderDetail.cshtml.g.cs
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\OrderLines\Detail.cshtml.g.cs
+C:\Users\Roshan\Documents\GitHub\FoodDemo\FoodDemo\FoodDemo.Web\obj\Debug\netcoreapp3.0\Razor\Pages\OrderLines\PartialView\_List.cshtml.g.cs

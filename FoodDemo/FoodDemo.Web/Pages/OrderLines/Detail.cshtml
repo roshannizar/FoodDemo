@@ -1,0 +1,21 @@
+﻿@page "{orderlineId:int}"
+@model FoodDemo.Web.Pages.OrderLines.DetailModel
+@{
+    ViewData["Title"] = "Order Detail";
+}
+
+    <div class="container-fluid">
+        <h3>Order Details for @Model.orderlineid</h3>
+        <span class="badge badge-warning">Order Status: @Model.Orders.Status</span>
+        <br /><br />
+        <div class="container-fluid">
+            <div class="row">
+                @foreach (var orderline in Model.OrderLines)
+                {
+                    <partial name="PartialView/_List" model="orderline"/>
+                }
+            </div>
+        </div>
+    </div>
+
+
