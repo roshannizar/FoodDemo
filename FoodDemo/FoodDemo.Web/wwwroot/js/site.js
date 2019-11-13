@@ -117,6 +117,19 @@ function ShowProduct(name) {
     };
 }
 
+function DeleteOrder() {
+
+    GetOrderId();
+
+    if (orderId) {
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.open("DELETE", "api/Order/" + orderId, true);
+        xhttp.send();
+        location.replace("/OrderLines/Index");
+    }
+}
+
 function AddOrderLine() {
 
     var table = document.getElementById("tableForm");

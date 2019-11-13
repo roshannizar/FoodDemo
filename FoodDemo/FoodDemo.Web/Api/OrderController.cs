@@ -55,8 +55,18 @@ namespace FoodDemo.Web.Api
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<ActionResult<Order>> Delete(int id)
         {
+            var order = await db.Orders.FindAsync(id);
+            if (order == null)
+            {
+                return NotFound();
+            }
+
+            db.Orders.Remove(order);
+            await db.SaveChangesAsync();
+
+            return order;
         }
     }
 }

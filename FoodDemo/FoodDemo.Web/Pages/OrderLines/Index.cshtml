@@ -25,7 +25,7 @@
             <tr>
                 <td>
                     <input type="text" id="productId" hidden />
-                    <select class="badge" onchange="ShowProduct(this.value,'all')" asp-for="Name" id="productname" name="ProductId" asp-items="Model.productList">
+                    <select class="badge" onchange="ShowProduct(this.value)" asp-for="Name" id="productname" name="ProductId" asp-items="Model.productList">
                         <option>-- Choose a product --</option>
                     </select>
                 </td>
@@ -79,7 +79,7 @@
                         Press save changes to save your orders!
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" onclick="DeleteOrder()">Close</button>
                         <button type="button" class="btn btn-primary" onclick="CreateOrderLine()">Save changes</button>
                     </div>
                 </div>

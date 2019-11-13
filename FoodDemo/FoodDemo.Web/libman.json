@@ -17,6 +17,10 @@
     {
       "library": "datatables@1.10.19",
       "destination": "wwwroot/datatables/"
+    },
+    {
+      "library": "autocomplete.js@0.37.0",
+      "destination": "wwwroot/autocomplete.js/"
     }
   ]
 }
