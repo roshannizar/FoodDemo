@@ -20,15 +20,15 @@ namespace FoodDemo.Web.Pages.OrderLines
         private readonly IOrderLineService orderLineService;
         private readonly IProductService productService;
         private readonly ICustomerService customerService;
-        public IEnumerable<OrderLine> orderLines { get; set; }
-        public IEnumerable<Product> products { get; set; }
-        public SelectList customerList { get; set; }
-        public SelectList productList { get; set; }
+        public IEnumerable<OrderLine> OrderLines { get; set; }
+        public IEnumerable<Product> Products { get; set; }
+        public SelectList CustomerList { get; set; }
+        public SelectList ProductList { get; set; }
         [BindProperty]
-        public OrderLine orderLine { get; set; }
+        public OrderLine OrderLine { get; set; }
         public int Id { get; set; }
         public string Name { get; set; }
-        public string productname { get; set; }
+        public string Productname { get; set; }
         
         public IndexModel(IConfiguration configuration,IOrderLineService orderLineService,IProductService productService,ICustomerService customerService)
         {
@@ -42,10 +42,10 @@ namespace FoodDemo.Web.Pages.OrderLines
         {
             //Customer dropdown
             var listOfCustomers = customerService.GetCustomers().ToList();
-            customerList = new SelectList(listOfCustomers, "Id", "FirstName");
+            CustomerList = new SelectList(listOfCustomers, "Id", "FirstName");
 
             var listOfProducts = productService.GetProducts().ToList();
-            productList = new SelectList(listOfProducts, "Name", "Name");
+            ProductList = new SelectList(listOfProducts, "Name", "Name");
         } 
 
         

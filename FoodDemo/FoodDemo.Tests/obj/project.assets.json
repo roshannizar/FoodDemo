@@ -5258,9 +5258,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Roshan\\Documents\\GitHub\\FoodDemo\\FoodDemo\\FoodDemo.Tests\\FoodDemo.Tests.csproj",
-      "projectName": "FoodDemo.Tests",
-      "projectPath": "C:\\Users\\Roshan\\Documents\\GitHub\\FoodDemo\\FoodDemo\\FoodDemo.Tests\\FoodDemo.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\Roshan\\Documents\\GitHub\\FoodDemo\\FoodDemo\\FoodDemo.Tests\\FoodDemo.Test.csproj",
+      "projectName": "FoodDemo.Test",
+      "projectPath": "C:\\Users\\Roshan\\Documents\\GitHub\\FoodDemo\\FoodDemo\\FoodDemo.Tests\\FoodDemo.Test.csproj",
       "packagesPath": "C:\\Users\\Roshan\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Roshan\\Documents\\GitHub\\FoodDemo\\FoodDemo\\FoodDemo.Tests\\obj\\",
       "projectStyle": "PackageReference",

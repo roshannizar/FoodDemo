@@ -49,8 +49,33 @@ namespace FoodDemo.Web.Api
 
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public async Task<IActionResult> Put(int id, [FromBody]Order order)
         {
+            if(id != order.Id)
+            {
+                return BadRequest();
+            }
+
+            db.Entry(order).State = EntityState.Modified;
+
+            try
+            {
+                await db.SaveChangesAsync();
+            }
+            catch(DbUpdateConcurrencyException ex)
+            {
+                var existing = db.Orders.Any(o => o.Id == id);
+                if(!existing)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
         }
 
         // DELETE api/<controller>/5

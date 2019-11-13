@@ -324,7 +324,7 @@ window.onload = function getSession() {
                 editButtonCell.appendChild(editBtn);
 
 
-                productNameCell.innerHTML = orders.productId;
+                productNameCell.innerHTML = orders.productName;
                 descriptionCell.innerHTML = orders.description;
                 unitPriceCell.innerHTML = "Rs: " + orders.unitPrice;
                 quantityCell.innerHTML = orders.quantity;
